@@ -1,3 +1,5 @@
+// Porting over https://github.com/Jeiwan/uniswapv3-code/blob/main/unimath.py for Google Sheets App Script
+
 MIN_TICK = -887272
 MAX_TICK = 887272
 
