@@ -86,7 +86,7 @@ function calc_amount_out0(amtliq0, amtliq1, price_low, price_cur, price_upp, amt
     amount_in = calc_amount1(liq, price_next, sqrtp_cur)
     amount_out = calc_amount0(liq, price_next, sqrtp_cur)
 
-    return amount_out
+    return amount_out/WAD
 
 }
 
