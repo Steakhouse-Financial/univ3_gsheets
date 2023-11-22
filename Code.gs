@@ -123,7 +123,7 @@ function max_trade_for_slip(amtliq0, amtliq1, price_low, price_cur, price_upp, m
       amount_in += 0.1 * WAD 
 
     }
-    output = [amount_in/WAD, amount_out/WAD, slip]
+    output = [[amount_in/WAD, amount_out/WAD, slip]]
 
     return output
 
