@@ -89,3 +89,42 @@ function calc_amount_out0(amtliq0, amtliq1, price_low, price_cur, price_upp, amt
     return amount_out
 
 }
+
+function max_trade_for_slip(amtliq0, amtliq1, price_low, price_cur, price_upp, max_slip) {
+    // Slippage in bps
+    target_slip = max_slip / 10000
+    slip = 0
+
+    sqrtp_low = price_to_sqrtp(price_low)
+    sqrtp_cur = price_to_sqrtp(price_cur)
+    sqrtp_upp = price_to_sqrtp(price_upp)
+
+    amount0 = amtliq0 * WAD
+    amount1 = amtliq1 * WAD
+
+    liq0 = liquidity0(amount0, sqrtp_cur, sqrtp_upp)
+    liq1 = liquidity1(amount1, sqrtp_cur, sqrtp_low)
+    liq  = Math.abs(Math.trunc(Math.min(liq0, liq1)))
+
+    amount_in = 0.1 * WAD
+    while (slip < target_slip) {
+      price_diff = Math.abs(Math.trunc((amount_in * Q96)/liq))
+      price_next = sqrtp_cur + price_diff
+
+      amount_in = calc_amount1(liq, price_next, sqrtp_cur)
+      amount_out = calc_amount0(liq, price_next, sqrtp_cur)
+
+      slip = Math.abs(amount_out / amount_in - 1)
+
+      // Resetting the liquidity
+      liq0 = liquidity0(amount0, sqrtp_cur, sqrtp_upp)
+      liq1 = liquidity1(amount1, sqrtp_cur, sqrtp_low)
+      liq = Math.abs(Math.trunc(Math.min(liq0, liq1)))
+      amount_in += 0.1 * WAD 
+
+    }
+    output = [amount_in/WAD, amount_out/WAD, slip]
+
+    return output
+
+}
