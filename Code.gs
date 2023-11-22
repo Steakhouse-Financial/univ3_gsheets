@@ -1,4 +1,5 @@
 // Porting over https://github.com/Jeiwan/uniswapv3-code/blob/main/unimath.py for Google Sheets App Script
+// From https://github.com/Steakhouse-Financial/univ3_gsheets https://steakhouse.financial
 
 MIN_TICK = -887272
 MAX_TICK = 887272
