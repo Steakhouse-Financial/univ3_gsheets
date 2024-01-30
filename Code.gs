@@ -23,10 +23,6 @@ function get_wad() {
   return WAD
 }
 
-function price_to_tick(p){
-    return Math.trunc(Math.log(p, 1.0001))
-}
-
 function price_to_sqrtp(p){
     return Math.trunc(Math.sqrt(p) * Q96)
 }
