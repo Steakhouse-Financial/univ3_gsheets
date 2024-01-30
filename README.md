@@ -45,31 +45,14 @@ Returns the tick value to Q96 square root price.
 ### `liquidity0(amount, pa, pb)`
 
 Returns the UniMath liquidity of token0 between two prices.
-    
-    if (pa > pb) {
-        pa, pb = pb, pa
-    }
-    return (amount * (pa * pb) / Q96) / (pb - pa)
-}
 
 ### `liquidity1(amount, pa, pb)`
 
 Returns the UniMath liquidity of token1 between two prices.
 
-    if (pa > pb) {
-        pa, pb = pb, pa
-    }
-    return amount * Q96 / (pb - pa)
-}
-
 ### `calc_amount0(liq, pa, pb)`
 
 Returns the amount of token0 for a given amount of liquidity between two prices.
-    if (pa > pb) {
-        pa, pb = pb, pa
-    }
-    return Math.abs(Math.trunc(liq * Q96 * (pb - pa) / pb / pa))
-}
 
 ### `calc_amount1(liq, pa, pb)`
 
