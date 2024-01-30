@@ -5,7 +5,7 @@ Ported over code from [github.com/jeiwan/uniswapv3-code](https://github.com/Jeiw
 
 ## Installation
 
-Open a new Google Sheets document and paste in the contents of [Code.gs](https://github.com/Steakhouse-Financial/univ3_gsheets/blob/main/Code.gs) into `Code.gs`. The following functions are thereafter available:
+Open a new Google Sheets document, open Extensions->AppScript and paste in the contents of [Code.gs](https://github.com/Steakhouse-Financial/univ3_gsheets/blob/main/Code.gs) into `Code.gs`. The following functions are thereafter available:
 
 ## Functions
 
