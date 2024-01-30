@@ -33,6 +33,7 @@ Returns Uniswap v3 style square root
 n.b. 
 
 > Ticks are integers that can be positive and negative and, of course, they’re not infinite. Uniswap V3 stores $\sqrt{P}$ as a fixed point Q64.96 number, which is a rational number that uses 64 bits for the integer part and 96 bits for the fractional part. Thus, prices (equal to the square of $\sqrt{P}$) are within the range: $[2^{-128}, 2^{128}]$.
+From [Uniswap v3 Book](https://uniswapv3book.com/)
 
 ### `sqrtp_to_price(sqrtp)`
 
